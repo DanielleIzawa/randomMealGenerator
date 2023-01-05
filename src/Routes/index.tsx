@@ -1,13 +1,13 @@
 import React from "react";
-import Home from "./../pages/Home";
-import Revenues from "./../pages/Revenues";
+import Home from "../pages/Home";
+import Revenues from "../pages/Revenue.tsx";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
 export default function Routing() {
   return (
     <>
       <Router>
-        <div
+        {/* <div
           style={{
             width: 100 + "vw",
             height: 80,
@@ -22,10 +22,16 @@ export default function Routing() {
           <Link to="/revenues" style={{ marginRight: "15px" }}>
             Revenues
           </Link>
-        </div>
+        </div> */}
+        {/* <Link to="/" style={{ marginRight: "15px" }}>
+          Home
+        </Link>
+        <Link to="/revenues" style={{ marginRight: "15px" }}>
+          Revenues
+        </Link> */}
         <Routes>
-          <Route path="/:name" element={<Home />} />
-          <Route path="/about" element={<Revenues />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/receitas" element={<Revenues />} />
         </Routes>
       </Router>
     </>
