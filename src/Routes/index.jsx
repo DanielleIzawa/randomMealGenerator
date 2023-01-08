@@ -1,6 +1,6 @@
 import React from "react";
 import Home from "../pages/Home";
-import Revenues from "../pages/Revenue.tsx";
+import Revenues from "../pages/Revenue.tsx/index.jsx";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
 export default function Routing() {

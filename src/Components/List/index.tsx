@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Container,
   ContainerText,
@@ -6,20 +5,26 @@ import {
   ContainerTitles,
 } from "./styles";
 
+import useAxios from "../../hooks/useAxios";
+import { useEffect } from "react";
+
 function List() {
+  const { fetchData, response } = useAxios();
+  const { strCategory, strArea } = response;
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
     <Container>
       <ContainerTitles>
-        <ContainerTextBold>Category:</ContainerTextBold>
-        <ContainerText>Beef</ContainerText>
+        <ContainerTextBold>Categoria</ContainerTextBold>
+        <ContainerText>{strCategory}</ContainerText>
       </ContainerTitles>
       <ContainerTitles>
         <ContainerTextBold>Area:</ContainerTextBold>
-        <ContainerText>Dutch</ContainerText>
-      </ContainerTitles>
-      <ContainerTitles>
-        <ContainerTextBold>Tags:</ContainerTextBold>
-        <ContainerText>DinnerParty, HangoverFood, Alcoholic</ContainerText>
+        <ContainerText>{strArea}</ContainerText>
       </ContainerTitles>
     </Container>
   );
